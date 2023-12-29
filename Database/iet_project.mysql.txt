@@ -6,6 +6,12 @@ create table users (
   password varchar(100) not null
 );
 
+/* create table blog_category*/
+create table blog_categories (
+  category_id int primary key auto_increment,
+  name varchar(50) not null
+);
+
 /*creating table blog */
 CREATE TABLE blogs (
   blog_id int primary key auto_increment,
@@ -16,12 +22,6 @@ CREATE TABLE blogs (
   created_at timestamp default current_timestamp,
   foreign key (user_id) references users(user_id),
   foreign key (category_id) references blog_categories(category_id)
-);
-
-/* create table blog_category*/
-create table blog_categories (
-  category_id int primary key auto_increment,
-  name varchar(50) not null
 );
 
 /* creating blog table for category */
